@@ -1,0 +1,254 @@
+/* ==========================================================================
+   Jesenická Vyhlídka – styl podle investice.differentcars.eu
+   Písmo Instrument Sans, bílé / jemně šedé sekce, karty 14 px s tenkým okrajem,
+   tlačítka 6 px, zvýrazněný údaj v nadpisu. Barvy: měď / dřevo Jesenické.
+   ========================================================================== */
+:root{
+  --white:#ffffff;
+  --subtle:#f8f7f4;
+  --accent-bg:#f6ece2;
+  --ink:#0d0d0d;
+  --text:#2a2825;
+  --muted:#6b6660;
+  --line:#dbd7cf;
+  --line-strong:#c2bdb4;
+  --copper:#b98459;
+  --copper-dark:#94643c;
+  --gold:var(--copper);--gold-strong:var(--copper-dark);--gold-light:#d4a27a;--cream:var(--subtle);--paper:#fff;--stone:var(--subtle);
+  --font:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r-ctl:6px;--r-card:14px;--r-big:20px;
+  --shadow:0 1px 3px rgba(26,26,24,.06),0 6px 24px rgba(26,26,24,.06);
+}
+
+/* ---------- základ ---------- */
+body{background:var(--white);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.62}
+body p{color:var(--text)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+
+/* ---------- typografie ---------- */
+body h1,body h2,body h3{font-family:var(--font);text-transform:none;color:var(--ink)}
+body h2,body .section-heading h2,body .numbers-copy h2,body .calc-intro h2,body .faq-intro h2,body .contact-info h2,body .cta-inner h2{font-size:clamp(28px,2.8vw,40px)!important;line-height:1.2!important;letter-spacing:-.014em!important;font-weight:700!important}
+body h2 span,body h2 em{color:inherit!important;font-style:normal!important;font-weight:inherit!important}
+body h3{font-weight:600;font-size:19px;letter-spacing:-.014em}
+body .hero h1{font-size:clamp(34px,3.2vw,46px);line-height:1.08;letter-spacing:-.022em;font-weight:600;max-width:620px;margin:0 0 22px}
+body .hero h1 em{font-style:normal;color:inherit}
+.hero-highlight{display:inline-block;background:var(--copper);color:#fff;border-radius:var(--r-ctl);padding:2px 14px 6px;margin-top:6px}
+body .hero-subtitle{font-size:18px!important;line-height:1.62!important;color:var(--text)!important;max-width:560px}
+
+/* štítek nad nadpisem: krátká linka nad malým popiskem */
+body .eyebrow{display:block;font-family:var(--font);font-style:normal;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--copper-dark)}
+body .eyebrow-line{display:block;width:24px;height:2px;background:var(--copper);margin-bottom:12px;opacity:1}
+body .hero .eyebrow{display:none}
+
+/* drobné popisky */
+.stat-top,.tiny-kicker,.review-kicker,.form-kicker,.calc-card-top,.calc-model-flag,.chart-label-row,.market-graphic-foot,.range-labels{font-family:var(--font)!important;text-transform:none!important;letter-spacing:0!important;font-weight:500!important;font-size:13px!important;color:var(--muted)!important}
+
+/* ---------- tlačítka ---------- */
+body .btn{font-family:var(--font);font-weight:600;font-size:15px;letter-spacing:-.005em;border-radius:var(--r-ctl);padding:10px 22px;min-height:44px;gap:10px;transition:background .2s,border-color .2s,color .2s}
+body .btn-large{font-size:18px;padding:15px 28px;min-height:54px}
+body .btn > span:last-child,.text-link > span:last-child{display:none}
+body .btn-gold{background:var(--copper);border-color:var(--copper);color:#fff!important}
+body .btn-gold:hover{background:var(--copper-dark);border-color:var(--copper-dark)}
+body .btn-outline{background:var(--white);border-color:var(--line-strong)!important;color:var(--ink)!important}
+body .btn-outline:hover{border-color:var(--ink)!important}
+.text-link{font-weight:600;color:var(--copper-dark)!important}
+
+/* ---------- hlavička ---------- */
+body .site-header{background:var(--white);border-bottom:1px solid var(--line);backdrop-filter:none}
+body .main-nav{gap:4px}
+body .main-nav a{font-family:var(--font);font-size:13px;font-weight:600;color:var(--ink);padding:10px 9px;border-radius:var(--r-ctl);transition:background .2s}
+body .main-nav a:hover{background:var(--subtle)}
+.brand-logo{color:var(--copper)}
+.brand .brand-type{font-family:var(--font);font-weight:700;color:var(--ink)}
+.brand .brand-type small{color:var(--muted);font-weight:600}
+
+/* ---------- hero ---------- */
+body .hero{background:var(--white);padding-top:72px}
+body .hero-grain,body .hero-bottom{display:none}
+body .hero-visual{border:0;border-radius:var(--r-big);height:440px;box-shadow:none}
+body .hero-photo{filter:none}
+body .hero-image-shade{background:linear-gradient(to bottom,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 100%)!important}
+body .image-tag{top:auto!important;bottom:16px;left:16px;background:rgba(255,255,255,.94)!important;color:var(--ink)!important;border:0!important;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;box-shadow:0 1px 3px rgba(26,26,24,.06)}
+body .hero-visual-card{border-radius:var(--r-card);top:16px;bottom:auto!important;right:16px;left:auto!important}
+body .hero-visual-card span{text-transform:none;letter-spacing:0;font-family:var(--font)}
+body .hero-visual-card strong{font-family:var(--font);font-weight:700;letter-spacing:-.02em}
+body .hero-fine{color:var(--muted)!important;font-size:14px!important}
+body .signal{background:var(--copper)!important;box-shadow:none!important}
+
+/* ---------- parametry: bílé dlaždice ---------- */
+body .stats{background:var(--white);border:0;padding-bottom:24px}
+body .stats-grid{gap:16px;padding-top:28px;padding-bottom:16px}
+body .stat,body .stat:not(:first-child){background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:18px 22px}
+body .stat-top{display:none}
+body .stat strong{font-family:var(--font);font-size:22px;font-weight:700;letter-spacing:-.015em;color:var(--ink);margin:0 0 4px}
+body .stat strong span{font-size:inherit;font-weight:inherit;color:inherit}
+body .stat p{font-size:14px;color:var(--muted);margin:0}
+body .stats-note{border:1px solid var(--line);border-radius:var(--r-card);background:var(--subtle);padding:12px 22px;color:var(--text);font-size:14px}
+body .info-icon{border-color:var(--copper);color:var(--copper-dark)}
+
+/* ---------- sekce ---------- */
+body .section{padding:96px 0}
+body .process-section{background:var(--subtle)}
+body .numbers-section{background:var(--white)}
+body .market-section{background:var(--subtle)}
+body .reviews-section{background:var(--accent-bg)}
+body .calculator-section{background:var(--subtle)}
+body .faq-section{background:var(--white)}
+body .contact-section{background:var(--subtle)}
+body .section-heading p,body .lead{font-size:18px;line-height:1.62;color:var(--text)}
+
+/* vlastnosti projektu: karty jako postup na referenci */
+body .step-number{display:none}
+body .steps-grid{gap:16px;border:0}
+body .step,body .step + .step,body .step:not(:first-child){position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:22px 22px 26px}
+body .step-icon{position:absolute;top:18px;right:18px;width:36px;height:36px;margin:0;color:var(--copper);background:none;border-radius:0}
+body .step-icon svg{width:36px;height:36px}
+body .step h3{font-family:var(--font);font-weight:600;font-size:19px;margin:44px 0 8px}
+body .step p{font-size:15px;color:var(--text)}
+
+/* galerie */
+body .gallery-item{border-radius:var(--r-big)}
+body .gallery-item img{filter:none;transition:transform .6s}
+body .gallery-item:hover img{transform:scale(1.02)}
+body .gallery-caption{text-transform:none;letter-spacing:0;font-family:var(--font);font-weight:600;font-size:13px}
+body .gallery-caption b{display:none}
+body .gallery-footer strong{font-family:var(--font);font-weight:700;font-size:19px}
+
+/* čísla a grafy */
+body .metric-list strong{font-family:var(--font);font-weight:700;font-size:28px;letter-spacing:-.015em;color:var(--ink)}
+body .chart-card,body .market-graphic,body .review,body .calculator-card,body .contact-form{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:var(--shadow)}
+body .chart-pill{border-radius:var(--r-ctl);background:var(--accent-bg);color:var(--copper-dark);border-color:transparent;font-weight:600;text-transform:none}
+body .bar-fill,body .vertical-bar div{background:var(--copper)!important;border-radius:4px 4px 0 0}
+body .bar-value,body .vertical-bar span{font-family:var(--font);font-weight:600;color:var(--ink)}
+body .diligence-row{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:24px 28px}
+body .diligence-row h3{font-family:var(--font);font-weight:600;font-size:19px;line-height:1.35}
+body .diligence-links a{border-radius:var(--r-ctl);border:1px solid var(--line);background:var(--subtle);font-weight:600}
+body .diligence-links a:hover{border-color:var(--ink)}
+
+/* výzva: zaoblený pruh */
+body .cta-section{background:var(--white);border:0;padding:24px 0}
+body .cta-section::before,body .cta-orb{display:none}
+body .cta-inner{background:var(--accent-bg);border:0;border-radius:var(--r-big);padding:40px 48px;min-height:0;box-shadow:none}
+body .cta-inner .eyebrow{display:none}
+body .cta-inner h2{font-size:clamp(24px,2.2vw,30px)!important}
+body .cta-inner p{color:var(--text)}
+
+/* zajištění */
+body .point-index{display:none}
+body .market-point{gap:18px;padding:22px 0;border-color:var(--line)}
+body .market-point h3{font-family:var(--font);font-weight:600;font-size:19px;margin-bottom:4px}
+body .market-point::before{content:"";flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent-bg) no-repeat center/22px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394643c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 5 6v5c0 4.6 3 8.4 7 10 4-1.6 7-5.4 7-10V6l-7-3Z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E")}
+body .market-graphic{padding:28px}
+
+/* pásma dluhopisů */
+body .review{padding:28px;min-height:0}
+body .review.is-featured{border:1.5px solid var(--copper)}
+body .review-kicker{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+body .review-quote-mark{font-family:var(--font);font-weight:700;font-size:48px;letter-spacing:-.03em;color:var(--ink);margin:14px 0 6px}
+body .review.is-featured .review-quote-mark{color:var(--copper-dark)}
+body .review-badge{display:inline-block;border:1.5px solid var(--copper);color:var(--copper-dark);background:var(--white);border-radius:999px;font-size:12px;font-weight:600;padding:3px 11px}
+body .review-person{border-top:1px solid var(--line);padding-top:16px}
+body .avatar{display:none}
+body .review-person strong{font-weight:600}
+body .review-person small a{color:var(--copper-dark);font-weight:600;font-size:15px}
+
+/* kalkulačka */
+body .calc-assumptions b{font-family:var(--font);font-weight:700;font-size:32px;color:var(--ink)}
+body .calc-assumptions small{text-transform:none;letter-spacing:0;font-size:13px;color:var(--muted)}
+body .calculator-card{padding:48px;border-radius:var(--r-big)}
+body .amount-input-wrap{border-radius:var(--r-ctl);border:1px solid var(--line);background:var(--white)}
+body .amount-input-wrap input{font-family:var(--font);font-weight:700;font-size:32px;color:var(--ink)}
+body .range{accent-color:var(--copper)}
+body .calc-result strong{font-family:var(--font);font-weight:700;font-size:26px;color:var(--ink)}
+body .calc-total{background:var(--subtle);border:1px solid var(--line);border-radius:16px}
+body .calc-total strong{font-family:var(--font);font-weight:700;font-size:40px;color:var(--copper-dark);letter-spacing:-.02em}
+
+/* FAQ */
+body .accordion details{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:0 22px;margin-bottom:10px}
+body .accordion details[open]{border-color:var(--line-strong)}
+body .accordion summary{font-family:var(--font);font-weight:600;font-size:17px;color:var(--ink)}
+body .accordion .answer{font-size:16px;line-height:1.62;color:var(--text)}
+
+/* kontakt */
+body .benefits li{border-color:var(--line);color:var(--text);font-size:15px}
+body .benefits li > span:first-child{display:none}
+body .benefits li::before{content:"";flex:none;width:36px;height:36px;border-radius:50%;background:var(--accent-bg) no-repeat center/18px var(--ico)}
+body .benefits li:nth-child(1){--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394643c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Cpath d='m3.5 6.5 8.5 6.5 8.5-6.5'/%3E%3C/svg%3E")}
+body .benefits li:nth-child(2){--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394643c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 3.5h3.5l1.8 4.6-2.3 1.4a11 11 0 0 0 6.5 6.5l1.4-2.3 4.6 1.8V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5Z'/%3E%3C/svg%3E")}
+body .benefits li:nth-child(3){--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394643c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z'/%3E%3C/svg%3E")}
+body .benefits li:nth-child(4){--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394643c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 21V8l8-5 8 5v13M4 21h16M9 21v-6h6v6'/%3E%3C/svg%3E")}
+body .contact-seal{display:none}
+body .contact-form{padding:40px}
+body .contact-form h3{font-family:var(--font);font-weight:700;font-size:24px}
+body .field label{font-weight:600;color:var(--ink);font-size:14px}
+body .field input,body .field select{border-radius:var(--r-ctl);border:1px solid var(--line);background:var(--white);color:var(--ink);padding:11px 14px}
+body .field input:focus,body .field select:focus{border-color:var(--copper);outline:none}
+
+/* patička */
+body .site-footer{background:var(--white);border-top:1px solid var(--line)}
+body .footer-bottom{color:var(--muted);text-transform:none;letter-spacing:0}
+body .footer-main p{color:var(--text)}
+
+/* ---------- responzivita ---------- */
+@media (max-width:900px){
+  body .stats-grid{grid-template-columns:repeat(2,1fr)}
+  body .steps-grid{grid-template-columns:1fr 1fr}
+  body .cta-inner{padding:32px 26px;flex-direction:column;align-items:flex-start}
+}
+@media (max-width:700px){
+  body .section{padding:64px 0}
+  body .hero{padding-top:40px}
+  body .hero h1{font-size:30px;line-height:1.18}
+  .hero-highlight{display:inline;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 10px 3px}
+  body .hero-visual{height:320px}
+  body .stats-grid{gap:10px}
+  body .stat,body .stat:not(:first-child){padding:14px 16px}
+  body .steps-grid{gap:10px}
+  body .calculator-card,body .contact-form{padding:24px 18px}
+  body .diligence-row{flex-direction:column;align-items:flex-start;padding:20px 18px}
+  body .accordion details{padding:0 16px}
+}
+
+/* ==========================================================================
+   Animace (vše vypnuto při systémovém omezení pohybu)
+   ========================================================================== */
+/* ukazatel postupu výstavby */
+.build-progress{display:flex;align-items:center;gap:14px;margin-top:14px;max-width:420px}
+.build-progress-bar{flex:1;height:6px;border-radius:99px;background:var(--line);overflow:hidden}
+.build-progress-bar i{display:block;height:100%;width:var(--p);border-radius:inherit;background:var(--copper)}
+.build-progress b{font-weight:700;font-size:15px;color:var(--ink);min-width:44px;font-variant-numeric:tabular-nums}
+
+@media (prefers-reduced-motion:no-preference){
+  /* 1) příchod úvodní obrazovky */
+  body .hero-photo{animation:jv-settle 1.6s cubic-bezier(.2,.7,.1,1) both}
+  .hero-highlight{animation:jv-wipe .9s .45s cubic-bezier(.6,0,.2,1) both}
+  body .hero-subtitle,body .hero-actions,body .hero-fine{animation:jv-in .7s .9s ease-out both}
+  @keyframes jv-settle{from{transform:scale(1.07)}to{transform:none}}
+  @keyframes jv-wipe{from{clip-path:inset(0 100% 0 0 round 6px)}to{clip-path:inset(0 0 0 0 round 6px)}}
+  @keyframes jv-in{from{opacity:0}to{opacity:1}}
+
+  /* 2) čísla bez posunu rozvržení */
+  body .stat strong{font-variant-numeric:tabular-nums}
+
+  /* 2) růst sloupců grafů */
+  .jv-anim .bar-chart .bar-fill,.jv-anim .vertical-bars .vertical-bar div{transform:scaleY(0);transform-origin:bottom;transition:transform 1s cubic-bezier(.2,.7,.1,1)}
+  .jv-anim .bar-chart .bar-value,.jv-anim .vertical-bars span{opacity:0;transition:opacity .4s}
+  .jv-anim .is-visible .bar-fill,.jv-anim .is-visible.vertical-bars .vertical-bar div{transform:none}
+  .jv-anim .is-visible .bar-value,.jv-anim .is-visible.vertical-bars span{opacity:1;transition-delay:.7s}
+  .jv-anim .is-visible > :nth-child(2) .bar-fill,.jv-anim .is-visible > .vertical-bar:nth-child(2) div{transition-delay:.06s}
+  .jv-anim .is-visible > :nth-child(3) .bar-fill,.jv-anim .is-visible > .vertical-bar:nth-child(3) div{transition-delay:.12s}
+  .jv-anim .is-visible > :nth-child(4) .bar-fill,.jv-anim .is-visible > .vertical-bar:nth-child(4) div{transition-delay:.18s}
+  .jv-anim .is-visible > :nth-child(5) .bar-fill,.jv-anim .is-visible > .vertical-bar:nth-child(5) div{transition-delay:.24s}
+  .jv-anim .is-visible > :nth-child(6) .bar-fill{transition-delay:.30s}
+  .jv-anim .is-visible > :nth-child(7) .bar-fill{transition-delay:.36s}
+  .jv-anim .is-visible > :nth-child(8) .bar-fill{transition-delay:.42s}
+
+  /* 3) kalkulačka: zvýraznění nové sazby */
+  .jv-flash{animation:jv-flash .9s ease-out}
+  @keyframes jv-flash{0%{background:rgba(185,132,89,.28);box-shadow:0 0 0 6px rgba(185,132,89,.28)}100%{background:transparent;box-shadow:0 0 0 6px transparent}}
+  #calc-rate-badge,#calc-tier-flag{border-radius:6px}
+
+  /* 4) naplnění ukazatele výstavby */
+  .jv-anim .build-progress-bar i{width:0;transition:width 1.4s cubic-bezier(.2,.7,.1,1)}
+  .jv-anim .build-progress.is-visible .build-progress-bar i{width:var(--p)}
+}
