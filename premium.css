@@ -587,3 +587,36 @@ body .program-section{background:var(--subtle)}
   .emise-t2 .prog-tier-list{grid-template-columns:1fr!important}
   .emise-t3 .prog-tier-detail{grid-template-columns:1fr 1fr}
 }
+
+/* ===== T4: původní velké karty 8/9/10 % vedle kalkulačky (výchozí) ===== */
+.pt-range,.pt-desc,.pt-foot{display:none}
+.emise-t4 .prog-tier{display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:0;padding:22px 20px 20px;text-align:left;box-shadow:var(--shadow)}
+.emise-t4 .prog-tier-name,.emise-t4 .prog-tier .prog-row{display:none!important}
+.emise-t4 .pt-range{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;font-size:12.5px;color:var(--muted);min-height:26px}
+.emise-t4 .pt-badge{font-style:normal;border:1.5px solid var(--copper);color:var(--copper-dark);background:var(--white);border-radius:999px;font-size:11px;font-weight:600;padding:1px 9px;white-space:nowrap}
+.emise-t4 .prog-tier-rate{display:block;font-size:46px;font-weight:700;letter-spacing:-.03em;line-height:1.1;color:var(--ink);margin:10px 0 10px}
+.emise-t4 .prog-tier-rate small{display:none}
+.emise-t4 .prog-tier.is-active .prog-tier-rate{color:var(--copper-dark)}
+.emise-t4 .prog-tier.is-active{background:var(--white);border-color:var(--copper);box-shadow:0 0 0 1px var(--copper),var(--shadow)}
+.emise-t4 .pt-desc{display:block;font-size:14px;line-height:1.6;color:var(--text);margin-bottom:16px}
+.emise-t4 .pt-foot{display:flex;flex-direction:column;gap:4px;margin-top:auto;border-top:1px solid var(--line);padding-top:14px}
+.emise-t4 .pt-foot b{font-size:13px;font-weight:600;color:var(--ink)}
+.emise-t4 .pt-foot u{text-decoration:none;font-size:14.5px;font-weight:600;color:var(--copper-dark)}
+.emise-t4 .prog-tier:hover .pt-foot u{text-decoration:underline}
+@media (min-width:901px){
+  .emise-t4 .prog-tier-list{grid-template-columns:repeat(3,1fr)!important;gap:12px;flex:1}
+  .emise-t4.prog-a1 .prog-tiers,.emise-t4.prog-a2 .prog-tiers,.emise-t4.prog-a3 .prog-tiers{align-self:stretch;display:flex;flex-direction:column}
+  .emise-t4.prog-a1 .prog,.emise-t4.prog-a2 .prog{column-gap:32px}
+}
+
+.pt-extra{display:none!important}
+.emise-t4 .prog-tier{position:relative;padding:26px 20px 20px}
+.emise-t4 .pt-badge{position:absolute;top:-11px;left:18px;background:var(--copper);color:#fff;border-color:var(--copper);padding:2px 10px}
+.emise-t4 .prog-tier-rate{font-size:60px;margin:6px 0 14px}
+.emise-t4 .prog-tier .prog-row{display:flex!important;flex-direction:row!important;justify-content:space-between;align-items:baseline!important;gap:8px;border-top:1px solid var(--line);padding:11px 0;font-size:13px}
+.emise-t4 .prog-tier .prog-row:nth-of-type(1){display:none!important}
+.emise-t4 .prog-tier .prog-row i{font-size:12.5px!important}
+.emise-t4 .prog-tier .prog-row em{font-size:13.5px}
+.emise-t4 .pt-foot{padding-top:14px}
+@media (min-width:901px){.emise-t4 .prog-tiers .prog-label{margin-bottom:16px}}
+.emise-t4 .prog-tier-rate + .prog-row{display:none!important}

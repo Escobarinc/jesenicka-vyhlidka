@@ -252,8 +252,8 @@
   document.body.classList.add('prog-' + (v && /^a[123]$/.test(v) ? v : 'a1'));
 })();
 
-/* Náhled designu seznamu emisí: ?emise=t1|t2|t3 (výchozí t1) */
+/* Náhled designu seznamu emisí: ?emise=t0|t1|t2|t3 (t0 = původní řádky, výchozí t1) */
 (() => {
   const v = new URLSearchParams(location.search).get('emise');
-  document.body.classList.add('emise-' + (v && /^t[123]$/.test(v) ? v : 't1'));
+  document.body.classList.add('emise-' + (v && /^t[0-4]$/.test(v) ? v : 't4'));
 })();
