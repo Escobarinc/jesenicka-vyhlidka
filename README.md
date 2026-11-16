@@ -57,3 +57,7 @@ Vzhled je ve vrstvě `premium.css` (smazáním odkazu v `index.html` se web vrá
 - `animations.js`: dlaždice s čísly se dopočítají, sloupce obou grafů vyrostou, ukazatel postupu výstavby se naplní na 40 % – vždy jen jednou při zobrazení.
 - Kalkulačka (`script.js`): výsledky se plynule přepočítají, při změně pásma se nová sazba krátce zvýrazní.
 - Při systémovém omezení pohybu (prefers-reduced-motion) se nic neanimuje.
+
+## Nahrávání úprav
+
+Před každým commitem spusťte `./bump.sh` – přidá k odkazům na CSS/JS v `index.html` nové číslo verze, takže návštěvníci po nahrání hned uvidí novou verzi (GitHub Pages jinak drží soubory až 10 minut v mezipaměti). Pak `git commit` a `git push`.
