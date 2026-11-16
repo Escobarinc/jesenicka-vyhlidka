@@ -265,3 +265,24 @@ body .stats-grid{padding-top:14px}
 body .hero-subtitle{text-wrap:pretty;text-align:justify;hyphens:auto;-webkit-hyphens:auto;margin:0 0 14px!important}
 body .hero-subtitle:last-of-type{margin-bottom:28px!important}
 .nohy{hyphens:manual;-webkit-hyphens:manual;white-space:nowrap}
+
+/* O projektu: faktické dlaždice a karta emitenta */
+body .facts-grid .step h3{margin:44px 0 6px;font-size:28px;font-weight:700;letter-spacing:-.02em}
+body .facts-grid .fact-label,.emitent-card .fact-label{display:block;position:absolute;top:22px;left:22px;font-size:13px;font-weight:600;color:var(--muted)}
+body .facts-grid .step p{font-size:15px;margin:0}
+body .facts-grid .build-progress{margin-top:14px}
+body .facts-grid .build-progress b{font-size:14px}
+.emitent-card{display:flex;align-items:center;gap:22px;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:24px 28px;margin:0 0 40px}
+.emitent-icon{flex:none;width:52px;height:52px;border-radius:50%;background:var(--accent-bg);color:var(--copper-dark);display:grid;place-items:center}
+.emitent-icon svg{width:28px;height:28px}
+.emitent-text{flex:1;min-width:0}
+.emitent-card .fact-label{position:static;margin-bottom:2px}
+.emitent-text strong{display:block;font-size:19px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.emitent-text p{margin:0;font-size:15px;color:var(--text);max-width:720px}
+.emitent-card .btn{flex:none}
+@media (max-width:700px){.emitent-card{flex-direction:column;align-items:flex-start;padding:20px 18px}}
+@media (max-width:700px){
+  body .facts-grid{grid-template-columns:1fr}
+  body .facts-grid .step h3{font-size:24px;margin-top:40px}
+  body .facts-grid .step-icon,body .facts-grid .step-icon svg{width:30px;height:30px}
+}
