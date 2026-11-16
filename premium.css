@@ -292,3 +292,9 @@ body .section{padding-top:40px;padding-bottom:88px}
 body .section .steps-grid{margin-top:36px}
 html{scroll-padding-top:86px}
 @media (max-width:700px){body .section{padding-top:32px;padding-bottom:64px}}
+
+/* O projektu: dlaždice, obrázky a emitent těsně u sebe */
+body .process-section .steps-grid{margin-bottom:16px}
+body .process-section .gallery-grid{margin:0 0 16px}
+body .process-section .emitent-card{margin:0}
+@media (max-width:700px){body .process-section .steps-grid,body .process-section .gallery-grid{margin-bottom:10px}}
