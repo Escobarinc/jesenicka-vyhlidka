@@ -714,3 +714,33 @@ body .lead,body .numbers-copy .lead,body .prog-intro p,body .contact-info > p{fo
   body #process-heading,body .section-heading h2{font-size:26px!important}
   body .facts-grid .step h3{font-size:22px}
 }
+
+/* ===== Návrh vylepšení (náhled přes ?upgrade=1) ===== */
+/* 1) pryč skleněná karta na úvodní fotce (údaj je v nadpisu i v dlaždici) */
+.up .hero-visual-card{display:none}
+.up .hero-image-shade{background:linear-gradient(to bottom,rgba(0,0,0,0) 70%,rgba(0,0,0,.3) 100%)!important}
+/* 2) ploché karty bez měkkých stínů, jen tenká linka */
+.up .chart-card,.up .review,.up .calculator-card,.up .contact-form,.up .prog-calc,.up .prog-tier,.up .sec-card,.up .cta-inner,.up .doc-item:hover{box-shadow:none!important}
+.up .emise-t4 .prog-tier.is-active,.up.emise-t4 .prog-tier.is-active{box-shadow:0 0 0 1px var(--copper)!important}
+/* 3) tmavší měď na tlačítkách – bílý text je čitelnější */
+.up .btn-gold,.up .nav-cta{background:#8f5f38!important;border-color:#8f5f38!important}
+.up .btn-gold:hover,.up .nav-cta:hover{background:#7a4f2c!important;border-color:#7a4f2c!important}
+.up .hero-highlight{background:#8f5f38}
+/* 4) Zajištění: místo tří stejných štítů velká čísla 01–03 */
+.up #trh .sec-points .market-point::before{display:none}
+.up #trh .sec-points .market-point > div{display:grid;grid-template-columns:44px 1fr;column-gap:14px}
+.up #trh .sec-num{grid-row:1/span 2;font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.1;color:var(--copper)}
+.up #trh .sec-points .market-point h3{margin-top:0}
+.up #trh .sec-points .market-point p{grid-column:2}
+/* 5) štítky nad nadpisy bez ozdobné čárky, klidnější */
+.up .eyebrow-line,.up .footer-docs-head .eyebrow-line{display:none!important}
+.up .eyebrow{letter-spacing:.06em}
+/* 6) seznam „Co získáte“: prostá fajfka bez kolečka */
+.up .gets-list li::before{background-color:transparent;background-size:15px}
+.up .gets-list li{padding-left:28px}
+/* 7) klidnější dlaždice parametrů: jeden pruh s dělicími linkami */
+@media (min-width:901px){
+  .up .stats-grid{gap:0;border:1px solid var(--line);border-radius:var(--r-card);background:var(--white);padding:0;margin-top:14px}
+  .up .stat,.up .stat:not(:first-child){border:0;border-radius:0;background:none;padding:16px 22px}
+  .up .stat:not(:first-child){border-left:1px solid var(--line)}
+}

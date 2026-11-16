@@ -266,3 +266,8 @@
     else a.addEventListener('click', e => e.preventDefault());
   });
 })();
+
+/* Náhled návrhu vylepšení: ?upgrade=1 */
+(() => {
+  if (new URLSearchParams(location.search).get('upgrade') === '1') document.body.classList.add('up');
+})();
