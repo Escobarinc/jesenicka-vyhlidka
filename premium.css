@@ -696,3 +696,21 @@ body .contact-info .gets-note{font-weight:700;color:var(--ink);margin:0}
 .doc-item.is-pending .doc-meta{color:var(--muted);background:var(--subtle);border:1px solid var(--line)}
 @media (max-width:900px){.doc-grid{grid-template-columns:1fr 1fr}.footer-docs-head{grid-template-columns:1fr}}
 @media (max-width:600px){.doc-grid{grid-template-columns:1fr}}
+
+/* ===== Jednotná typografická škála (úvod sladěný s ostatními sekcemi) =====
+   nadpis úvodu 34 px · nadpisy sekcí 30 px · podnadpisy 26 px · hodnoty dlaždic 24 px
+   úvodní text 16 px · běžný text 15 px · drobné popisky 12–13 px · tlačítka 15 px */
+body .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;max-width:560px;margin-bottom:18px}
+body .hero h1 .hero-highlight{padding:1px 10px 4px;margin-top:6px}
+body .hero-subtitle{font-size:16px!important;line-height:1.6!important;max-width:540px}
+body .hero-actions .btn,body .hero-actions .btn-large{font-size:15px;padding:12px 22px;min-height:46px}
+body .hero-fine{font-size:13px!important}
+body #process-heading,body .section-heading h2{font-size:30px!important;line-height:1.2!important}
+body .section-heading p{font-size:16px!important;line-height:1.6!important}
+body .facts-grid .step h3{font-size:24px}
+body .lead,body .numbers-copy .lead,body .prog-intro p,body .contact-info > p{font-size:16px;line-height:1.6}
+@media (max-width:700px){
+  body .hero h1{font-size:28px}
+  body #process-heading,body .section-heading h2{font-size:26px!important}
+  body .facts-grid .step h3{font-size:22px}
+}
