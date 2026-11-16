@@ -298,3 +298,5 @@ body .process-section .steps-grid{margin-bottom:16px}
 body .process-section .gallery-grid{margin:0 0 16px}
 body .process-section .emitent-card{margin:0}
 @media (max-width:700px){body .process-section .steps-grid,body .process-section .gallery-grid{margin-bottom:10px}}
+/* jednotná mezera 16 px mezi všemi bloky a dlaždicemi v O projektu */
+body .process-section .gallery-grid{gap:16px}
