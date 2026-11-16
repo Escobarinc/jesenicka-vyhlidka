@@ -625,3 +625,26 @@ body .program-section{background:var(--subtle)}
   .emise-t4 .prog-tier-rate{font-size:48px}
   .emise-t4 .prog-tier{padding:24px 16px 18px}
 }
+
+/* ===== FAQ kompaktně: nadpis v jednom řádku, otázky ve dvou sloupcích ===== */
+body .faq-layout{display:block}
+body .faq-intro{display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:6px 32px;margin-bottom:18px}
+body .faq-intro .eyebrow{grid-column:1/-1}
+body .faq-intro h2{margin:0!important;font-size:30px!important}
+body .faq-intro p{margin:0;font-size:15px;color:var(--muted);padding-bottom:4px}
+body .faq-intro .text-link{margin:0;padding-bottom:4px;white-space:nowrap}
+body .faq-layout #faq-list{margin-top:0!important;display:grid;grid-template-columns:1fr 1fr;gap:0 40px;align-items:start;background:var(--subtle);border:1px solid var(--line);border-radius:var(--r-big);padding:6px 24px}
+body #faq-list details{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:0;margin:0}
+body #faq-list .faq-col details:last-child{border-bottom:0}
+body #faq-list summary{font-size:15px;padding:13px 0;gap:12px}
+body #faq-list .answer{font-size:14.5px;line-height:1.6;padding:0 0 14px;max-width:none}
+body #faq-list .accordion-icon{transform:scale(.8);flex:none}
+@media (max-width:900px){
+  body .faq-intro{grid-template-columns:1fr}
+  body .faq-layout #faq-list{grid-template-columns:1fr;padding:4px 16px}
+  body #faq-list .faq-col:first-child details:last-child{border-bottom:1px solid var(--line)}
+}
+body .faq-intro{position:static;top:auto;align-items:baseline;margin-bottom:22px;padding:0}
+body .faq-intro h2{line-height:1.2!important}
+body .faq-intro p{max-width:none;padding:0;line-height:1.5}
+body .faq-intro .text-link{padding-bottom:2px;margin-top:0}
