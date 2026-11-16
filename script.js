@@ -204,3 +204,29 @@
     showFeedback('Údaje jsou správně vyplněné. Stránka je v demonstračním režimu: poptávka nebyla nikam odeslána. Pro reálný provoz doplňte kontaktní e-mail nebo CRM endpoint do config.js.');
   });
 })();
+
+/* Zvýraznění sekce, ve které se právě nachází, v hlavním menu */
+(() => {
+  const links = [...document.querySelectorAll('#main-nav a[href^="#"]')];
+  const items = links.map(a => ({ a, sec: document.querySelector(a.getAttribute('href')) })).filter(x => x.sec);
+  if (!items.length) return;
+  const header = document.querySelector('.site-header');
+  let current = null;
+  const update = () => {
+    const line = (header ? header.offsetHeight : 0) + window.innerHeight * 0.3;
+    let active = null;
+    for (const it of items) if (it.sec.getBoundingClientRect().top <= line) active = it;
+    if (active && active.sec.getBoundingClientRect().bottom < line) active = null;
+    if (active === current) return;
+    current = active;
+    items.forEach(it => {
+      const on = it === active;
+      it.a.classList.toggle('is-active', on);
+      if (on) it.a.setAttribute('aria-current', 'true'); else it.a.removeAttribute('aria-current');
+    });
+  };
+  let ticking = false;
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { ticking = false; update(); }); } }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();

@@ -63,7 +63,8 @@ body .main-nav a:hover{background:var(--subtle)}
 .brand .brand-type small{color:var(--muted);font-weight:600}
 
 /* ---------- hero ---------- */
-body .hero{background:var(--white);padding-top:72px}
+body .hero{background:var(--white);padding-top:0}
+body .hero-layout{min-height:0;padding-top:36px;padding-bottom:40px}
 body .hero-grain,body .hero-bottom{display:none}
 body .hero-visual{border:0;border-radius:var(--r-big);height:440px;box-shadow:none}
 body .hero-photo{filter:none}
@@ -197,7 +198,8 @@ body .footer-main p{color:var(--text)}
 }
 @media (max-width:700px){
   body .section{padding:64px 0}
-  body .hero{padding-top:40px}
+  body .hero{padding-top:0}
+  body .hero-layout{padding-top:28px;padding-bottom:28px}
   body .hero h1{font-size:30px;line-height:1.18}
   .hero-highlight{display:inline;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 10px 3px}
   body .hero-visual{height:320px}
@@ -252,3 +254,7 @@ body .footer-main p{color:var(--text)}
   .jv-anim .build-progress-bar i{width:0;transition:width 1.4s cubic-bezier(.2,.7,.1,1)}
   .jv-anim .build-progress.is-visible .build-progress-bar i{width:var(--p)}
 }
+
+/* aktivní sekce v menu */
+body .main-nav a.is-active{color:var(--copper-dark);background:var(--accent-bg)}
+body .main-nav a.is-active::after{display:none}
