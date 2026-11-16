@@ -286,3 +286,9 @@ body .facts-grid .build-progress b{font-size:14px}
   body .facts-grid .step h3{font-size:24px;margin-top:40px}
   body .facts-grid .step-icon,body .facts-grid .step-icon svg{width:30px;height:30px}
 }
+
+/* sekce blíž k horní liště (menší horní odsazení) */
+body .section{padding-top:40px;padding-bottom:88px}
+body .section .steps-grid{margin-top:36px}
+html{scroll-padding-top:86px}
+@media (max-width:700px){body .section{padding-top:32px;padding-bottom:64px}}
