@@ -362,3 +362,9 @@ body .cta-section{padding:24px 0}
 @media (max-width:700px){body .numbers-section{padding-bottom:64px}}
 /* pravý box Financování začíná na úrovni nadpisu (pod štítkem „Financování“) */
 @media (min-width:901px){body .fin-card{margin-top:55px}}
+/* levý blok Financování končí na spodní hraně pravého boxu */
+@media (min-width:901px){
+  body .numbers-section .numbers-copy{align-self:stretch;display:flex;flex-direction:column}
+  body .numbers-section .numbers-copy .metric-list{flex:1;display:flex;flex-direction:column;margin-bottom:0}
+  body .numbers-section .numbers-copy .metric-list > div{flex:1;display:flex;align-items:center;justify-content:space-between}
+}
