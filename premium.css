@@ -327,3 +327,17 @@ body .numbers-copy .lead + .lead{margin-top:12px}
   .jv-anim .fin-split.is-visible .fin-bond{transition-delay:.15s}
 }
 @media (max-width:700px){.fin-split{height:auto;flex-direction:column}.fin-split span{width:auto;padding:12px 16px}.fin-table{font-size:13px}.fin-table th,.fin-table td{padding:10px 6px}}
+
+/* Financování: nadpis na dva řádky (1. největší, 2. o kousek menší), menší čísla */
+body .numbers-copy{container-type:inline-size}
+body .numbers-copy h2.fin-heading{max-width:none;font-size:inherit!important;line-height:1.15!important;margin-bottom:18px}
+body .fin-heading span{display:block;white-space:nowrap}
+body .fin-heading .fh-1{font-size:6.15cqi}
+body .fin-heading .fh-2{font-size:5.3cqi;margin-top:4px}
+body .numbers-copy .lead{font-size:16px;line-height:1.6;margin:0}
+body .numbers-copy .lead + .lead{margin-top:10px}
+body .numbers-copy .metric-list{margin-top:22px}
+body .numbers-copy .metric-list > div{padding:11px 0}
+body .numbers-copy .metric-list strong{font-size:20px}
+body .numbers-copy .metric-list span{font-size:13px}
+@media (max-width:900px){body .fin-heading span{white-space:normal}body .fin-heading .fh-1{font-size:30px}body .fin-heading .fh-2{font-size:25px}}
