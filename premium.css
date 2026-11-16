@@ -676,3 +676,23 @@ body .contact-info .gets-note{font-weight:700;color:var(--ink);margin:0}
   body .contact-form .checkbox-label{margin:12px 0 14px}
   body .contact-info{padding-bottom:0}
 }
+
+/* ===== Zápatí: Ke stažení ===== */
+.footer-docs{border-top:1px solid var(--line);padding:32px 0 28px;scroll-margin-top:90px}
+.footer-docs-head{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:4px 24px;margin-bottom:16px}
+.footer-docs-head .eyebrow-line{grid-column:1/-1;display:block;width:24px;height:2px;background:var(--copper);margin-bottom:10px}
+.footer-docs-head h2{font-size:22px!important;line-height:1.2!important;margin:0!important;color:var(--ink)}
+.footer-docs-head p{margin:0;font-size:14px;color:var(--muted)}
+.doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.doc-item{display:flex;align-items:center;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:12px 14px;color:var(--ink);text-decoration:none;transition:border-color .2s,box-shadow .2s}
+.doc-item:not(.is-pending):hover{border-color:var(--copper);box-shadow:var(--shadow)}
+.doc-ico{flex:none;width:36px;height:36px;border-radius:50%;background:var(--accent-bg);color:var(--copper-dark);display:grid;place-items:center}
+.doc-ico svg{width:19px;height:19px}
+.doc-text{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.3}
+.doc-text b{font-size:14px;font-weight:600}
+.doc-text small{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.doc-meta{flex:none;font-size:11.5px;font-weight:600;color:var(--copper-dark);background:var(--accent-bg);border-radius:999px;padding:2px 9px}
+.doc-item.is-pending{cursor:default}
+.doc-item.is-pending .doc-meta{color:var(--muted);background:var(--subtle);border:1px solid var(--line)}
+@media (max-width:900px){.doc-grid{grid-template-columns:1fr 1fr}.footer-docs-head{grid-template-columns:1fr}}
+@media (max-width:600px){.doc-grid{grid-template-columns:1fr}}

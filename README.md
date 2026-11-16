@@ -61,3 +61,8 @@ Vzhled je ve vrstvě `premium.css` (smazáním odkazu v `index.html` se web vrá
 ## Nahrávání úprav
 
 Před každým commitem spusťte `./bump.sh` – přidá k odkazům na CSS/JS v `index.html` nové číslo verze, takže návštěvníci po nahrání hned uvidí novou verzi (GitHub Pages jinak drží soubory až 10 minut v mezipaměti). Pak `git commit` a `git push`.
+
+## Ke stažení (zápatí)
+
+Sekce `#ke-stazeni` v zápatí obsahuje 6 položek (emisní podmínky 8/9/10 %, ručitelská prohlášení ARKEMAX INVEST a Hofer Capital, zástavní smlouva).
+PDF ukládejte do `assets/dokumenty/` a u příslušné položky v `index.html` vyplňte `data-file="assets/dokumenty/nazev.pdf"` – štítek „Připravujeme“ se pak sám změní na „PDF“ a odkaz začne stahovat soubor.

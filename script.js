@@ -257,3 +257,12 @@
   const v = new URLSearchParams(location.search).get('emise');
   document.body.classList.add('emise-' + (v && /^t[0-4]$/.test(v) ? v : 't4'));
 })();
+
+/* Ke stažení: položky bez souboru jsou zatím neaktivní */
+(() => {
+  document.querySelectorAll('.doc-item').forEach(a => {
+    const f = a.dataset.file;
+    if (f) { a.href = f; a.classList.remove('is-pending'); a.removeAttribute('aria-disabled'); a.setAttribute('download', ''); a.querySelector('.doc-meta').textContent = 'PDF'; }
+    else a.addEventListener('click', e => e.preventDefault());
+  });
+})();
