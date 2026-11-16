@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="styles.css?v=20261116151639">
-  <link rel="stylesheet" href="premium.css?v=20261116151639">
+  <link rel="stylesheet" href="styles.css?v=20261116152019">
+  <link rel="stylesheet" href="premium.css?v=20261116152019">
 </head>
 <body>
 <a class="skip-link" href="#main">Přeskočit na obsah</a>
@@ -79,11 +79,12 @@
       <div class="prog-head"><div class="eyebrow"><span class="eyebrow-line"></span> Dluhopisový program</div><h2 id="program-heading">Výnos podle výše vaší investice</h2><div class="prog-intro"><p>Investujte do projektu Jesenická Vyhlídka prostřednictvím tří dluhopisových emisí s&nbsp;pevnou úrokovou sazbou od 8 do 10&nbsp;% ročně.</p><p>Zvolte výši investice a&nbsp;zjistěte odpovídající úrokovou sazbu, pravidelný úrokový příjem a&nbsp;podmínky konkrétní emise.</p></div></div>
       <div class="prog-tiers" role="group" aria-label="Investiční varianty">
         <span class="prog-label">Investiční varianty</span>
-        <div class="prog-tier-list">
-          <button type="button" class="prog-tier" data-amount="50000" data-rate="8"><b class="prog-tier-name">Emise 8 %</b><span class="prog-row"><i>Pevný úrok</i><em>8 % p.a.</em></span><span class="prog-row"><i>Investice od</i><em>50 000 Kč</em></span><span class="prog-row"><i>Výplata úroků</i><em>Čtvrtletně</em></span></button>
-          <button type="button" class="prog-tier" data-amount="250000" data-rate="9"><b class="prog-tier-name">Emise 9 %</b><span class="prog-row"><i>Pevný úrok</i><em>9 % p.a.</em></span><span class="prog-row"><i>Investice od</i><em>250 000 Kč</em></span><span class="prog-row"><i>Výplata úroků</i><em>Čtvrtletně</em></span></button>
-          <button type="button" class="prog-tier" data-amount="1000000" data-rate="10"><b class="prog-tier-name">Emise 10 %</b><span class="prog-row"><i>Pevný úrok</i><em>10 % p.a.</em></span><span class="prog-row"><i>Investice od</i><em>1 000 000 Kč</em></span><span class="prog-row"><i>Výplata úroků</i><em>Čtvrtletně</em></span></button>
+        <div class="prog-tier-head" aria-hidden="true"><span>Emise</span><span>Pevný úrok</span><span>Investice od</span><span>Výplata úroků</span></div><div class="prog-tier-list">
+          <button type="button" class="prog-tier" data-amount="50000" data-rate="8"><b class="prog-tier-name">Emise 8 %</b><strong class="prog-tier-rate">8&nbsp;%<small>p.a.</small></strong><span class="prog-row"><i>Pevný úrok</i><em>8 % p.a.</em></span><span class="prog-row"><i>Investice od</i><em>50 000 Kč</em></span><span class="prog-row"><i>Výplata úroků</i><em>Čtvrtletně</em></span></button>
+          <button type="button" class="prog-tier" data-amount="250000" data-rate="9"><b class="prog-tier-name">Emise 9 %</b><strong class="prog-tier-rate">9&nbsp;%<small>p.a.</small></strong><span class="prog-row"><i>Pevný úrok</i><em>9 % p.a.</em></span><span class="prog-row"><i>Investice od</i><em>250 000 Kč</em></span><span class="prog-row"><i>Výplata úroků</i><em>Čtvrtletně</em></span></button>
+          <button type="button" class="prog-tier" data-amount="1000000" data-rate="10"><b class="prog-tier-name">Emise 10 %</b><strong class="prog-tier-rate">10&nbsp;%<small>p.a.</small></strong><span class="prog-row"><i>Pevný úrok</i><em>10 % p.a.</em></span><span class="prog-row"><i>Investice od</i><em>1 000 000 Kč</em></span><span class="prog-row"><i>Výplata úroků</i><em>Čtvrtletně</em></span></button>
         </div>
+        <div class="prog-tier-detail" aria-live="polite"><div><span>Pevný úrok</span><b id="tier-d-rate">9 % p.a.</b></div><div><span>Investice od</span><b id="tier-d-min">250 000 Kč</b></div><div><span>Výplata úroků</span><b>Čtvrtletně</b></div><div><span>Splatnost</span><b>1. 8. 2031</b></div></div>
       </div>
       <div class="prog-calc" id="kalkulacka">
         <h3>Váš investiční propočet</h3>
@@ -131,8 +132,8 @@
 <footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="#top"><svg class="brand-logo" viewBox="0 0 58 40" aria-hidden="true" focusable="false"><path d="M7 31 25 6l8 11 5-7 13 21" fill="none" stroke="currentColor" stroke-width="4.1" stroke-linecap="square"/><path d="m19 31 10-14 10 14M25 6l-2 11" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="square"/></svg><span class="brand-type">JESENICKÁ <span class="brand-dot">VYHLÍDKA</span><small>APARTMÁNY V JESENÍKÁCH</small></span></a><p>Prémiový rezidenční projekt v srdci Jeseníků pod záštitou ARKEMAX INVEST. Vizualizace jsou ilustrační. Výnosy nejsou zárukou budoucích výsledků.</p><a class="btn btn-outline" href="#kontakt">Mám zájem <span>↗</span></a></div><div class="container footer-bottom"><span>© 2026 Jesenice Viewpoint s.r.o. – „Building things with responsibility“</span><div><button type="button" class="footer-link" data-open-policy>Ochrana osobních údajů</button><button type="button" class="footer-link" id="cookie-settings">Nastavení cookies</button><a href="#top">Zpět nahoru ↑</a></div></div></footer>
 <dialog class="lightbox" id="lightbox" aria-label="Fotogalerie"><button class="lightbox-close" aria-label="Zavřít galerii" type="button">✕</button><button class="lightbox-prev" type="button" aria-label="Předchozí fotografie">‹</button><img id="lightbox-img" src="assets/hero_photo.webp" alt=""><button class="lightbox-next" type="button" aria-label="Další fotografie">›</button><div id="lightbox-caption"></div></dialog>
 <dialog class="policy-dialog" id="policy-dialog"><div class="dialog-content"><button class="dialog-close" type="button" aria-label="Zavřít">✕</button><div class="eyebrow">Informace</div><h2>Soukromí a cookies</h2><p>Web neukládá ani neodesílá žádné osobní údaje na server. Formulář pouze připraví e-mail ve vašem poštovním klientovi, který odešlete sami.</p><p>Stránka nepoužívá analytické ani reklamní cookies.</p><p>Správcem údajů zaslaných e-mailem je ARKEMAX INVEST a.s. Podrobné zásady zpracování osobních údajů je potřeba doplnit před ostrým spuštěním.</p><button class="btn btn-gold dialog-confirm" type="button">Rozumím</button></div></dialog>
-<script src="config.js?v=20261116151639" defer></script>
-<script src="script.js?v=20261116151639" defer></script>
-<script src="animations.js?v=20261116151639" defer></script>
+<script src="config.js?v=20261116152019" defer></script>
+<script src="script.js?v=20261116152019" defer></script>
+<script src="animations.js?v=20261116152019" defer></script>
 </body>
 </html>

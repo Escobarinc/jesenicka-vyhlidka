@@ -67,6 +67,9 @@
       if (lastRate !== null && lastRate !== rate) { flash(qs('#res-emise')); flash(qs('#res-rate')); }
       lastRate = rate;
       qsa('.prog-tier').forEach(t => t.classList.toggle('is-active', Number(t.dataset.rate) === rate));
+      const dRate = qs('#tier-d-rate'), dMin = qs('#tier-d-min');
+      if (dRate) dRate.textContent = `${rate} % p.a.`;
+      if (dMin) dMin.textContent = rate === 10 ? '1 000 000 Kč' : rate === 9 ? '250 000 Kč' : '50 000 Kč';
       tweenMoney(qs('#res-quarter'), quarter);
       tweenMoney(qs('#res-annual'), annual);
       tweenMoney(qs('#res-total'), quarter * payDates.length);
@@ -247,4 +250,10 @@
 (() => {
   const v = new URLSearchParams(location.search).get('program');
   document.body.classList.add('prog-' + (v && /^a[123]$/.test(v) ? v : 'a1'));
+})();
+
+/* Náhled designu seznamu emisí: ?emise=t1|t2|t3 (výchozí t1) */
+(() => {
+  const v = new URLSearchParams(location.search).get('emise');
+  document.body.classList.add('emise-' + (v && /^t[123]$/.test(v) ? v : 't1'));
 })();

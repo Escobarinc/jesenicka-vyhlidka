@@ -545,3 +545,45 @@ body .program-section{background:var(--subtle)}
   .prog-a3 .prog-tiers{grid-column:1}
   .prog-a3 .prog-calc{grid-column:2;width:440px}
 }
+
+/* ===== Design seznamu emisí (?emise=t1|t2|t3) ===== */
+.prog-tier-head,.prog-tier-rate,.prog-tier-detail{display:none}
+
+/* T1: tabulka se společnou hlavičkou, sloupce pod sebou */
+.emise-t1 .prog-tier-head{display:grid;grid-template-columns:1.1fr 1fr 1.1fr 1fr;padding:0 16px 6px;font-size:11.5px;font-weight:600;color:var(--muted)}
+.emise-t1 .prog-tier-list{gap:0;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;background:var(--white)}
+.emise-t1 .prog-tier{display:grid!important;grid-template-columns:1.1fr 1fr 1.1fr 1fr;align-items:center;border:0;border-radius:0;border-top:1px solid var(--line);padding:12px 16px;box-shadow:none!important;position:relative}
+.emise-t1 .prog-tier:first-child{border-top:0}
+.emise-t1 .prog-tier .prog-row{display:block!important}
+.emise-t1 .prog-tier .prog-row i{display:none}
+.emise-t1 .prog-tier .prog-row em{font-size:14.5px}
+.emise-t1 .prog-tier.is-active{background:var(--accent-bg)}
+.emise-t1 .prog-tier.is-active::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--copper)}
+
+/* T2: tři karty vedle sebe s velkým úrokem */
+.emise-t2 .prog-tier-list{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:10px}
+.emise-t2 .prog-tier{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:6px;padding:14px 16px}
+.emise-t2 .prog-tier-name{font-size:12.5px;font-weight:600;color:var(--muted)}
+.emise-t2 .prog-tier-rate{display:block;font-size:30px;font-weight:700;letter-spacing:-.02em;color:var(--ink);line-height:1.1;margin-bottom:6px}
+.emise-t2 .prog-tier-rate small{font-size:13px;font-weight:600;color:var(--muted);margin-left:4px}
+.emise-t2 .prog-tier.is-active .prog-tier-rate{color:var(--copper-dark)}
+.emise-t2 .prog-tier .prog-row{flex-direction:row!important;justify-content:space-between;align-items:baseline!important;border-top:1px solid var(--line);padding-top:6px}
+.emise-t2 .prog-tier .prog-row:nth-of-type(1){display:none}
+.emise-t2 .prog-tier .prog-row i{font-size:12px}
+
+/* T3: přepínač 8 / 9 / 10 % a jeden pruh s detailem vybrané emise */
+.emise-t3 .prog-tier-list{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:0;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;background:var(--white);padding:4px}
+.emise-t3 .prog-tier{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;border:0;border-radius:6px;padding:10px 8px;box-shadow:none!important;gap:0}
+.emise-t3 .prog-tier .prog-row,.emise-t3 .prog-tier-name{display:none}
+.emise-t3 .prog-tier-rate{display:block;font-size:22px;font-weight:700;color:var(--ink)}
+.emise-t3 .prog-tier-rate small{font-size:12px;font-weight:600;color:var(--muted);margin-left:3px}
+.emise-t3 .prog-tier.is-active{background:var(--copper)}
+.emise-t3 .prog-tier.is-active .prog-tier-rate,.emise-t3 .prog-tier.is-active .prog-tier-rate small{color:#fff}
+.emise-t3 .prog-tier-detail{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px;background:var(--accent-bg);border-radius:var(--r-card);padding:12px 16px}
+.emise-t3 .prog-tier-detail span{display:block;font-size:11.5px;color:var(--muted)}
+.emise-t3 .prog-tier-detail b{font-size:14.5px;color:var(--ink)}
+@media (max-width:700px){
+  .emise-t1 .prog-tier-head,.emise-t1 .prog-tier{grid-template-columns:1fr 1fr 1.2fr 1fr;font-size:12px}
+  .emise-t2 .prog-tier-list{grid-template-columns:1fr!important}
+  .emise-t3 .prog-tier-detail{grid-template-columns:1fr 1fr}
+}
