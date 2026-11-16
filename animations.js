@@ -41,7 +41,7 @@
   once(stats, el => countUp(el, 1300), 0.6);
 
   // 2) grafy: sloupce vyrostou zdola (graf úroků vzniká skriptem, proto až po načtení)
-  const charts = () => [...document.querySelectorAll('.bar-chart, .vertical-bars')];
+  const charts = () => [...document.querySelectorAll('.bar-chart, .vertical-bars, .fin-split')];
   once(charts(), el => el.classList.add('is-visible'), 0.3);
 
   // 3) ukazatel postupu výstavby

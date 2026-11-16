@@ -83,12 +83,14 @@
 
   // Graf: kumulovaný hrubý úrok z 500 000 Kč při 9 % p.a. za 8 čtvrtletí.
   const chart = qs('#growth-chart');
+  if (chart) {
   const qGross = 500000 * .09 / 4;
   for (let quarter = 1; quarter <= 8; quarter++) {
     const col = document.createElement('div');
     col.className = 'bar-col';
     col.innerHTML = `<span class="bar-value">${(qGross * quarter / 1000).toFixed(1).replace('.', ',')}</span><div class="bar-fill" style="--height:${Math.round(quarter / 8 * 79)}%"></div><span class="bar-label">Q${quarter}</span>`;
     chart.appendChild(col);
+  }
   }
 
   // Vždy maximálně jedna otevřená otázka.
