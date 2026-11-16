@@ -233,8 +233,3 @@
   update();
 })();
 
-/* Náhled variant sekce Zajištění: ?zajisteni=a|b|c */
-(() => {
-  const v = new URLSearchParams(location.search).get('zajisteni');
-  if (v && /^[abc]$/.test(v)) document.body.classList.add('sec-var-' + v);
-})();

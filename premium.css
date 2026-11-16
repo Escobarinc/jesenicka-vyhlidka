@@ -402,42 +402,42 @@ body .sec-num{display:inline-block;font-size:12.5px;font-weight:700;color:var(--
   body .market-section .sec-foot{margin-top:auto}
 }
 
-/* ===== Varianty sekce Zajištění (náhled přes ?zajisteni=a|b|c) ===== */
-/* společné pro A a B: box vlevo, užší, obsah schématu na střed */
+/* ===== Zajištění (varianta B): box vlevo se štítkem, vpravo nadpis, úvod a karty ===== */
+#trh .sec-card{text-align:center}
+#trh .sec-card .chart-top{justify-content:center}
+#trh .sec-node{align-items:center;text-align:center}
+#trh .sec-row{grid-template-columns:1fr}
+#trh .sec-foot{align-items:center}
+#trh .sec-agent{text-align:center}
+#trh .sec-left .eyebrow{margin-bottom:16px}
+#trh .sec-left .sec-card{margin-top:0}
+#trh .sec-points{display:flex;flex-direction:column;gap:12px;margin-top:22px}
+#trh .sec-points .market-point{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:18px 20px}
+#trh .numbers-copy .lead{max-width:none}
+#trh .fin-heading .fh-1{font-size:4.32cqi}
+#trh .fin-heading .fh-2{font-size:3.72cqi}
 @media (min-width:901px){
-  .sec-var-a .security-layout,.sec-var-b .security-layout{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr)}
-  .sec-var-a .sec-card,.sec-var-b .sec-card{order:-1}
+  #trh .security-layout{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);align-items:stretch}
+  #trh .sec-left{display:flex;flex-direction:column;padding-bottom:20px}
+  #trh .sec-left .sec-card{flex:1;align-self:auto}
+  #trh .numbers-copy{display:flex;flex-direction:column;margin-top:calc(var(--sec-eyebrow,33px) + 16px + 20px)}
+  #trh .sec-points{flex:1}
+  #trh .sec-points .market-point{flex:1}
 }
-.sec-var-a .sec-card,.sec-var-b .sec-card,.sec-var-c .sec-card{text-align:center}
-.sec-var-a .sec-card .chart-top,.sec-var-b .sec-card .chart-top,.sec-var-c .sec-card .chart-top{justify-content:center}
-.sec-var-a .sec-node,.sec-var-b .sec-node,.sec-var-c .sec-node{align-items:center;text-align:center}
-.sec-var-a .sec-row,.sec-var-b .sec-row{grid-template-columns:1fr}
-.sec-var-a .sec-foot,.sec-var-b .sec-foot,.sec-var-c .sec-foot{align-items:center}
-.sec-var-a .sec-agent,.sec-var-b .sec-agent,.sec-var-c .sec-agent{text-align:center}
+@media (max-width:900px){#trh .fin-heading .fh-1{font-size:28px}#trh .fin-heading .fh-2{font-size:23px}}
 
-/* B: body vpravo jako samostatné karty */
-.sec-var-b .sec-points{display:flex;flex-direction:column;gap:12px;margin-top:22px}
-.sec-var-b .sec-points .market-point{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:18px 20px}
-.sec-var-b .market-section{background:var(--subtle)}
+#trh .sec-left{order:-1}
+@media (max-width:900px){#trh .sec-left{margin-bottom:8px}}
 
-/* C: nadpis a úvod na střed, body ve 3 sloupcích, schéma vodorovně přes celou šířku */
-.sec-var-c .security-layout{grid-template-columns:1fr!important;gap:24px}
-.sec-var-c #trh .numbers-copy{text-align:center;container-type:normal}
-.sec-var-c #trh .numbers-copy .eyebrow-line{margin-left:auto;margin-right:auto}
-.sec-var-c #trh .fin-heading .fh-1{font-size:31px}
-.sec-var-c #trh .fin-heading .fh-2{font-size:26px}
-.sec-var-c #trh .numbers-copy .lead{max-width:720px;margin:0 auto}
-.sec-var-c .sec-points{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;text-align:left}
-.sec-var-c .sec-points .market-point{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:20px;flex-direction:column;border-top:1px solid var(--line)}
-.sec-var-c .sec-card{margin-top:0!important;align-self:auto!important}
-.sec-var-c .sec-diagram{flex-direction:row;align-items:center;justify-content:center;gap:10px}
-.sec-var-c .sec-row{display:flex;flex-direction:column;gap:8px}
-.sec-var-c .sec-link{font-size:0;padding:0}
-.sec-var-c .sec-link::before{content:"→";font-size:20px;margin:0}
-.sec-var-c .sec-node{min-width:190px}
-.sec-var-c .sec-agent{max-width:640px;margin:0 auto}
-@media (max-width:900px){
-  .sec-var-c .sec-points{grid-template-columns:1fr}
-  .sec-var-c .sec-diagram{flex-direction:column}
-  .sec-var-c .sec-link::before{content:"↓"}
-}
+/* ===== Menší zaoblení rámečků na celém webu ===== */
+:root{--r-ctl:4px;--r-card:8px;--r-big:10px}
+body .sec-node{border-radius:6px}
+body .fin-split{border-radius:8px}
+body .calculator-card .calc-total{border-radius:8px}
+body .hero-visual::after{border-radius:6px}
+body .hero-highlight{border-radius:4px}
+body .hero-visual-card{border-radius:8px}
+body .accordion details{border-radius:8px}
+body .chart-card,body .market-graphic,body .review,body .calculator-card,body .contact-form,body .stat,body .step,body .emitent-card,body .diligence-row,body .cta-inner,body .gallery-item,body .hero-visual,body .sec-points .market-point,body .fin-card{border-radius:var(--r-card)}
+body .hero-visual,body .gallery-item,body .cta-inner,body .calculator-card{border-radius:var(--r-big)}
+@media (prefers-reduced-motion:no-preference){@keyframes jv-wipe{from{clip-path:inset(0 100% 0 0 round 4px)}to{clip-path:inset(0 0 0 0 round 4px)}}}
