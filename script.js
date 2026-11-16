@@ -243,8 +243,8 @@
 })();
 
 
-/* Náhled variant sekce Dluhopisový program: ?program=a|b|c (výchozí a) */
+/* Náhled variant sekce Dluhopisový program: ?program=a1|a2|a3 (výchozí a1) */
 (() => {
   const v = new URLSearchParams(location.search).get('program');
-  document.body.classList.add('prog-' + (v && /^[abc]$/.test(v) ? v : 'a'));
+  document.body.classList.add('prog-' + (v && /^a[123]$/.test(v) ? v : 'a1'));
 })();

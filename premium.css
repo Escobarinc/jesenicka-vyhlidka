@@ -496,42 +496,52 @@ body .program-section{background:var(--subtle)}
 .prog-calc .btn-full{width:100%}
 .prog-calc .calc-footnote{font-size:12px;color:var(--muted);margin:10px 0 0;line-height:1.5}
 
-/* A: vlevo nadpis + varianty pod sebou, vpravo propočet */
-@media (min-width:901px){
-  .prog-a .prog{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr;align-items:start}
-  .prog-a .prog-head{grid-column:1;grid-row:1}
-  .prog-a .prog-tiers{grid-column:1;grid-row:2}
-  .prog-a .prog-calc{grid-column:2;grid-row:1/span 2;margin-top:56px}
-  .prog-a .prog-tier-list{grid-template-columns:1fr}
-  .prog-a .prog-tier{flex-direction:row;align-items:center;justify-content:space-between;gap:14px}
-  .prog-a .prog-tier .prog-row{flex-direction:column;gap:0;align-items:flex-end}
-  .prog-a .prog-tier .prog-row i{font-size:11.5px}
-}
-/* B: nadpis vlevo + úvod vpravo, pod tím 3 karty emisí, pod nimi propočet ve dvou sloupcích */
-@media (min-width:901px){
-  .prog-b .prog{grid-template-columns:1fr}
-  .prog-b .prog-head{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;align-items:end}
-  .prog-b .prog-head .eyebrow,.prog-b .prog-head h2{grid-column:1}
-  .prog-b .prog-intro{grid-column:2;grid-row:1/span 2}
-  .prog-b .prog-calc{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:0 32px;align-items:start}
-  .prog-b .prog-calc h3,.prog-b .prog-input{grid-column:1}
-  .prog-b .prog-results{grid-column:2;grid-row:1/span 3;margin-top:0}
-  .prog-b .prog-schedule,.prog-b .prog-calc .btn-full,.prog-b .prog-calc .calc-footnote{grid-column:1}
-}
-/* C: vše v jednom panelu – nahoře nadpis a úvod na střed, pak pásek emisí a jednořádkový propočet */
-@media (min-width:901px){
-  .prog-c .prog{grid-template-columns:1fr;background:var(--white);border:1px solid var(--line);border-radius:var(--r-big);padding:28px 32px;box-shadow:var(--shadow);gap:18px}
-  .prog-c .prog-head{text-align:center;max-width:760px;margin:0 auto}
-  .prog-c .prog-head .eyebrow-line{margin-left:auto;margin-right:auto}
-  .prog-c .prog-calc{border:0;box-shadow:none;padding:0;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr) minmax(0,.8fr);gap:0 28px;align-items:start;border-top:1px solid var(--line);padding-top:18px;border-radius:0}
-  .prog-c .prog-calc h3{grid-column:1/-1}
-  .prog-c .prog-input{grid-column:1}
-  .prog-c .prog-results{grid-column:2;margin-top:0}
-  .prog-c .prog-schedule,.prog-c .prog-calc .btn-full,.prog-c .prog-calc .calc-footnote{grid-column:3}
-  .prog-c .prog-schedule{grid-row:2}
-  .prog-c .prog-calc .btn-full{grid-row:3}
-  .prog-c .prog-calc .calc-footnote{grid-row:4}
-  .prog-c .prog-tier{flex-direction:row;align-items:center;justify-content:space-between}
-  .prog-c .prog-tier .prog-row{flex-direction:column;gap:0;align-items:flex-end}
-}
 @media (max-width:900px){.prog-tier-list{grid-template-columns:1fr}.prog-results{grid-template-columns:1fr 1fr}}
+
+/* ===== Varianta A – kompaktní propočet a tři uspořádání (?program=a1|a2|a3) ===== */
+.prog-calc{padding:16px 18px;border-radius:var(--r-big)}
+.prog-calc h3{font-size:15px;margin:0 0 8px}
+.prog-input label{font-size:12.5px;margin-bottom:4px}
+.prog-input .amount-input-wrap{padding:2px 10px;min-height:0}
+.prog-input .amount-input-wrap input{font-size:19px!important;padding:6px 0}
+.prog-input .range{margin:8px 0 2px}
+.prog-input .range-labels{font-size:11px!important}
+.prog-results{margin:8px 0 4px;gap:0 16px}
+.prog-results > div{padding:6px 0}
+.prog-results dt{font-size:11.5px}
+.prog-results dd{font-size:15px;margin-top:1px}
+.prog-results .prog-total{padding:8px 12px;margin:6px 0}
+.prog-results .prog-total dd{font-size:19px}
+.prog-results .prog-total small{font-size:11px}
+.prog-schedule{margin:4px 0 10px;font-size:13px}
+.prog-calc .btn-full{font-size:14px;padding:9px 16px;min-height:40px}
+.prog-calc .calc-footnote{font-size:11px;margin-top:8px}
+.prog-tier{padding:10px 14px}
+.prog-tier-name{font-size:15px}
+@media (min-width:901px){
+  .prog-tier-list{grid-template-columns:1fr}
+  .prog-tier{flex-direction:row;align-items:center;justify-content:space-between;gap:14px}
+  .prog-tier .prog-row{flex-direction:column;gap:0;align-items:flex-end}
+  .prog-tier .prog-row i{font-size:11px}
+  .prog-calc{max-width:440px;width:100%}
+
+  /* A1: vlevo nadpis + emise, vpravo kompaktní propočet na úrovni nadpisu */
+  .prog-a1 .prog{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto 1fr;align-items:start;column-gap:56px}
+  .prog-a1 .prog-head{grid-column:1;grid-row:1}
+  .prog-a1 .prog-tiers{grid-column:1;grid-row:2}
+  .prog-a1 .prog-calc{grid-column:2;grid-row:1/span 2;margin-top:56px;width:440px}
+
+  /* A2: zrcadlově – propočet vlevo, nadpis + emise vpravo */
+  .prog-a2 .prog{grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto 1fr;align-items:start;column-gap:56px}
+  .prog-a2 .prog-head{grid-column:2;grid-row:1}
+  .prog-a2 .prog-tiers{grid-column:2;grid-row:2}
+  .prog-a2 .prog-calc{grid-column:1;grid-row:1/span 2;margin-top:56px;width:440px}
+
+  /* A3: nadpis a úvod přes celou šířku, pod tím emise vlevo a propočet vpravo na stejné výšce */
+  .prog-a3 .prog{grid-template-columns:minmax(0,1fr) auto;align-items:start;column-gap:56px}
+  .prog-a3 .prog-head{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:56px;align-items:end}
+  .prog-a3 .prog-head .eyebrow,.prog-a3 .prog-head h2{grid-column:1}
+  .prog-a3 .prog-intro{grid-column:2;grid-row:1/span 2}
+  .prog-a3 .prog-tiers{grid-column:1}
+  .prog-a3 .prog-calc{grid-column:2;width:440px}
+}
