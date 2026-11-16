@@ -24,62 +24,71 @@
     if (!nav.contains(e.target) && !toggle.contains(e.target)) closeMenu();
   });
 
-  // Kalkulačka Jesenická Vyhlídka: 8 / 9 / 10 % p.a. podle částky, kvartální výplata, 5 let, srážková daň 15 %.
+  // Dluhopisový program: 3 emise (8 % od 50 000, 9 % od 250 000, 10 % od 1 000 000 Kč), čtvrtletní výplata, splatnost 1. 8. 2031.
   const amountInput = qs('#investment-amount');
   const amountRange = qs('#investment-range');
-  const min = 50000, max = 10000000, step = 10000, years = 5, tax = .15;
-  const rateFor = a => a >= 1000000 ? .10 : a >= 500000 ? .09 : .08;
-  const tierLabel = r => r === .10 ? 'Pásmo od 1 000 000 Kč' : r === .09 ? 'Pásmo 500 000 – 999 000 Kč' : 'Pásmo 50 000 – 499 000 Kč';
-  const pct = r => Math.round(r * 100) + ' %';
-  const bounded = n => Math.max(min, Math.min(max, Number.isFinite(n) ? n : min));
-  const parseAmount = v => Number(String(v).replace(/[^0-9]/g, ''));
-  // Plynulé přepočítání částek (vypnuto při omezení pohybu)
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const tweenMoney = (el, to) => {
-    const from = Number(el.dataset.v || to);
-    el.dataset.v = to;
-    if (reduceMotion || from === to) { el.textContent = fmt(to); return; }
-    const start = performance.now(), dur = 420;
-    cancelAnimationFrame(el._raf);
-    const step = now => {
-      const t = Math.min(1, (now - start) / dur), e = 1 - Math.pow(1 - t, 3);
-      el.textContent = fmt(from + (to - from) * e);
-      if (t < 1) el._raf = requestAnimationFrame(step);
+  if (amountInput && amountRange) {
+    const min = 50000, max = 10000000, step = 10000;
+    const MATURITY = new Date(2031, 7, 1);
+    const rateFor = a => a >= 1000000 ? 10 : a >= 250000 ? 9 : 8;
+    const bounded = n => Math.max(min, Math.min(max, Number.isFinite(n) ? n : min));
+    const parseAmount = v => Number(String(v).replace(/[^0-9]/g, ''));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const dateFmt = new Intl.DateTimeFormat('cs-CZ', { day: 'numeric', month: 'numeric', year: 'numeric' });
+    // modelové termíny: každé 3 měsíce zpět od splatnosti, jen budoucí
+    const payDates = (() => {
+      const out = [], today = new Date();
+      for (let d = new Date(MATURITY); d > today; d = new Date(d.getFullYear(), d.getMonth() - 3, 1)) out.unshift(d);
+      return out;
+    })();
+    const tweenMoney = (el, to) => {
+      const from = Number(el.dataset.v || to);
+      el.dataset.v = to;
+      if (reduceMotion || from === to) { el.textContent = fmt(to); return; }
+      const start = performance.now(), dur = 420;
+      cancelAnimationFrame(el._raf);
+      const stepF = now => {
+        const t = Math.min(1, (now - start) / dur), e = 1 - Math.pow(1 - t, 3);
+        el.textContent = fmt(from + (to - from) * e);
+        if (t < 1) el._raf = requestAnimationFrame(stepF);
+      };
+      el._raf = requestAnimationFrame(stepF);
     };
-    el._raf = requestAnimationFrame(step);
-  };
-  let lastRate = null;
-  const flash = el => { el.classList.remove('jv-flash'); void el.offsetWidth; el.classList.add('jv-flash'); };
-  function updateCalculation(value, source) {
-    const amount = bounded(value);
-    if (source !== 'input') amountInput.value = Math.round(amount).toLocaleString('cs-CZ');
-    amountRange.value = Math.max(min, Math.min(max, Math.round(amount / step) * step));
-    amountRange.style.setProperty('--progress', ((amountRange.value - min) / (max - min) * 100) + '%');
-    const rate = rateFor(amount);
-    const annual = amount * rate;
-    qs('#calc-rate-badge').textContent = pct(rate);
-    qs('#calc-tier-flag').textContent = tierLabel(rate);
-    if (lastRate !== null && lastRate !== rate) { flash(qs('#calc-rate-badge')); flash(qs('#calc-tier-flag')); }
-    lastRate = rate;
-    tweenMoney(qs('#result-quarter'), annual / 4);
-    qs('#result-quarter-note').textContent = `hrubě, ${pct(rate)} p.a., ${years * 4} výplat`;
-    tweenMoney(qs('#result-annual'), annual);
-    qs('#result-annual-note').textContent = `hrubě, po srážkové dani 15 %: ${fmt(annual * (1 - tax))}`;
-    tweenMoney(qs('#result-total'), annual * years);
-    qs('#result-total-note').textContent = `Hrubě, bez reinvestice. Po srážkové dani 15 %: ${fmt(annual * years * (1 - tax))}.`;
-    return amount;
+    const flash = el => { el.classList.remove('jv-flash'); void el.offsetWidth; el.classList.add('jv-flash'); };
+    let lastRate = null;
+    function updateCalculation(value, source) {
+      const amount = bounded(value);
+      if (source !== 'input') amountInput.value = Math.round(amount).toLocaleString('cs-CZ');
+      amountRange.value = Math.max(min, Math.min(max, Math.round(amount / step) * step));
+      amountRange.style.setProperty('--progress', ((amountRange.value - min) / (max - min) * 100) + '%');
+      const rate = rateFor(amount), annual = amount * rate / 100, quarter = annual / 4;
+      qs('#res-emise').textContent = `Emise ${rate} %`;
+      qs('#res-rate').textContent = `${rate} % p.a.`;
+      if (lastRate !== null && lastRate !== rate) { flash(qs('#res-emise')); flash(qs('#res-rate')); }
+      lastRate = rate;
+      qsa('.prog-tier').forEach(t => t.classList.toggle('is-active', Number(t.dataset.rate) === rate));
+      tweenMoney(qs('#res-quarter'), quarter);
+      tweenMoney(qs('#res-annual'), annual);
+      tweenMoney(qs('#res-total'), quarter * payDates.length);
+      qs('#res-total-note').textContent = `${payDates.length} čtvrtletních výplat do 1. 8. 2031`;
+      const body = qs('#res-schedule');
+      if (body) body.innerHTML = payDates.map(d => `<tr><td>${dateFmt.format(d)}</td><td>${fmt(quarter)}</td></tr>`).join('');
+      const sel = qs('#lead-budget');
+      if (sel) sel.value = rate === 10 ? 'od 1 000 000 Kč (10 % p.a.)' : rate === 9 ? '250 000 – 999 999 Kč (9 % p.a.)' : '50 000 – 249 999 Kč (8 % p.a.)';
+      return amount;
+    }
+    amountRange.addEventListener('input', () => updateCalculation(Number(amountRange.value), 'range'));
+    amountInput.addEventListener('input', () => {
+      const raw = parseAmount(amountInput.value);
+      if (raw > 0) updateCalculation(raw, 'input');
+    });
+    amountInput.addEventListener('blur', () => {
+      const amount = parseAmount(amountInput.value);
+      updateCalculation(Math.round(bounded(amount) / step) * step, 'range');
+    });
+    qsa('.prog-tier').forEach(t => t.addEventListener('click', () => updateCalculation(Number(t.dataset.amount), 'range')));
+    updateCalculation(250000, 'range');
   }
-  amountRange.addEventListener('input', () => updateCalculation(Number(amountRange.value), 'range'));
-  amountInput.addEventListener('input', () => {
-    const raw = parseAmount(amountInput.value);
-    if (raw > 0) updateCalculation(raw, 'input');
-  });
-  amountInput.addEventListener('blur', () => {
-    const amount = parseAmount(amountInput.value);
-    updateCalculation(Math.round(bounded(amount) / step) * step, 'range');
-  });
-  qsa('[data-amount]').forEach(link => link.addEventListener('click', () => updateCalculation(Number(link.dataset.amount), 'range')));
-  updateCalculation(500000, 'range');
 
   // Graf: kumulovaný hrubý úrok z 500 000 Kč při 9 % p.a. za 8 čtvrtletí.
   const chart = qs('#growth-chart');
@@ -233,3 +242,9 @@
   update();
 })();
 
+
+/* Náhled variant sekce Dluhopisový program: ?program=a|b|c (výchozí a) */
+(() => {
+  const v = new URLSearchParams(location.search).get('program');
+  document.body.classList.add('prog-' + (v && /^[abc]$/.test(v) ? v : 'a'));
+})();

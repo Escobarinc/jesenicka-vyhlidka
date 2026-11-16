@@ -453,3 +453,85 @@ body .contact-section{padding:40px 0 88px}
 /* Zajištění: spodní hrana pravé strany = spodní hrana boxu; jen jedna čára pod odkazem */
 @media (min-width:901px){#trh .sec-left{padding-bottom:0}}
 #trh .sec-foot .chart-disclaimer{border-top:0;padding-top:4px}
+
+/* ===== Dluhopisový program (sloučené Pro investory + kalkulačka), kompaktní ===== */
+body .program-section{background:var(--subtle)}
+.prog{display:grid;gap:20px 40px}
+.prog-head h2{font-size:30px!important;line-height:1.15!important;margin:0 0 10px!important}
+.prog-intro p{margin:0 0 6px;font-size:15px;line-height:1.6;color:var(--text)}
+.prog-label{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--copper-dark);margin-bottom:8px}
+.prog-tier-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.prog-tier{appearance:none;font:inherit;text-align:left;cursor:pointer;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:12px 14px;display:flex;flex-direction:column;gap:4px;transition:border-color .2s,background .2s,box-shadow .2s}
+.prog-tier:hover{border-color:var(--line-strong)}
+.prog-tier.is-active{border-color:var(--copper);background:var(--accent-bg);box-shadow:0 0 0 1px var(--copper)}
+.prog-tier-name{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.prog-tier.is-active .prog-tier-name{color:var(--copper-dark)}
+.prog-row{display:flex;justify-content:space-between;gap:8px;font-size:13px}
+.prog-row i{font-style:normal;color:var(--muted)}
+.prog-row em{font-style:normal;font-weight:600;color:var(--ink);white-space:nowrap}
+.prog-calc{background:var(--white);border:1px solid var(--line);border-radius:var(--r-big);padding:22px 24px;box-shadow:var(--shadow)}
+.prog-calc h3{font-size:17px;margin:0 0 12px}
+.prog-input label{display:block;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.prog-input .amount-input-wrap{padding:6px 12px}
+.prog-input .amount-input-wrap input{font-size:24px!important}
+.prog-input .range-labels{font-size:12px!important}
+.prog-results{display:grid;grid-template-columns:1fr 1fr;gap:0 20px;margin:14px 0 6px}
+.prog-results > div{padding:9px 0;border-bottom:1px solid var(--line)}
+.prog-results dt{font-size:12.5px;color:var(--muted)}
+.prog-results dd{margin:2px 0 0;font-size:17px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.prog-results .prog-total{grid-column:1/-1;background:var(--accent-bg);border:0;border-radius:var(--r-card);padding:12px 14px;margin:8px 0}
+.prog-results .prog-total dd{font-size:24px;color:var(--copper-dark)}
+.prog-results .prog-total small{font-size:12px;color:var(--muted)}
+.prog-schedule{margin:6px 0 12px;font-size:14px}
+.prog-schedule summary{cursor:pointer;color:var(--copper-dark);font-weight:600;list-style:none}
+.prog-schedule summary::-webkit-details-marker{display:none}
+.prog-schedule summary::after{content:" ↓"}
+.prog-schedule[open] summary::after{content:" ↑"}
+.prog-schedule-wrap{margin-top:8px;max-height:220px;overflow:auto;border:1px solid var(--line);border-radius:var(--r-card)}
+.prog-schedule table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+.prog-schedule th,.prog-schedule td{padding:6px 12px;border-bottom:1px solid var(--line);text-align:left}
+.prog-schedule td:last-child,.prog-schedule th:last-child{text-align:right}
+.prog-schedule th{position:sticky;top:0;background:var(--subtle);font-weight:600;color:var(--muted);font-size:12px}
+.prog-schedule-wrap p{margin:0;padding:8px 12px;font-size:12px;color:var(--muted)}
+.prog-calc .btn-full{width:100%}
+.prog-calc .calc-footnote{font-size:12px;color:var(--muted);margin:10px 0 0;line-height:1.5}
+
+/* A: vlevo nadpis + varianty pod sebou, vpravo propočet */
+@media (min-width:901px){
+  .prog-a .prog{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr;align-items:start}
+  .prog-a .prog-head{grid-column:1;grid-row:1}
+  .prog-a .prog-tiers{grid-column:1;grid-row:2}
+  .prog-a .prog-calc{grid-column:2;grid-row:1/span 2;margin-top:56px}
+  .prog-a .prog-tier-list{grid-template-columns:1fr}
+  .prog-a .prog-tier{flex-direction:row;align-items:center;justify-content:space-between;gap:14px}
+  .prog-a .prog-tier .prog-row{flex-direction:column;gap:0;align-items:flex-end}
+  .prog-a .prog-tier .prog-row i{font-size:11.5px}
+}
+/* B: nadpis vlevo + úvod vpravo, pod tím 3 karty emisí, pod nimi propočet ve dvou sloupcích */
+@media (min-width:901px){
+  .prog-b .prog{grid-template-columns:1fr}
+  .prog-b .prog-head{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;align-items:end}
+  .prog-b .prog-head .eyebrow,.prog-b .prog-head h2{grid-column:1}
+  .prog-b .prog-intro{grid-column:2;grid-row:1/span 2}
+  .prog-b .prog-calc{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:0 32px;align-items:start}
+  .prog-b .prog-calc h3,.prog-b .prog-input{grid-column:1}
+  .prog-b .prog-results{grid-column:2;grid-row:1/span 3;margin-top:0}
+  .prog-b .prog-schedule,.prog-b .prog-calc .btn-full,.prog-b .prog-calc .calc-footnote{grid-column:1}
+}
+/* C: vše v jednom panelu – nahoře nadpis a úvod na střed, pak pásek emisí a jednořádkový propočet */
+@media (min-width:901px){
+  .prog-c .prog{grid-template-columns:1fr;background:var(--white);border:1px solid var(--line);border-radius:var(--r-big);padding:28px 32px;box-shadow:var(--shadow);gap:18px}
+  .prog-c .prog-head{text-align:center;max-width:760px;margin:0 auto}
+  .prog-c .prog-head .eyebrow-line{margin-left:auto;margin-right:auto}
+  .prog-c .prog-calc{border:0;box-shadow:none;padding:0;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr) minmax(0,.8fr);gap:0 28px;align-items:start;border-top:1px solid var(--line);padding-top:18px;border-radius:0}
+  .prog-c .prog-calc h3{grid-column:1/-1}
+  .prog-c .prog-input{grid-column:1}
+  .prog-c .prog-results{grid-column:2;margin-top:0}
+  .prog-c .prog-schedule,.prog-c .prog-calc .btn-full,.prog-c .prog-calc .calc-footnote{grid-column:3}
+  .prog-c .prog-schedule{grid-row:2}
+  .prog-c .prog-calc .btn-full{grid-row:3}
+  .prog-c .prog-calc .calc-footnote{grid-row:4}
+  .prog-c .prog-tier{flex-direction:row;align-items:center;justify-content:space-between}
+  .prog-c .prog-tier .prog-row{flex-direction:column;gap:0;align-items:flex-end}
+}
+@media (max-width:900px){.prog-tier-list{grid-template-columns:1fr}.prog-results{grid-template-columns:1fr 1fr}}
