@@ -341,3 +341,17 @@ body .numbers-copy .metric-list > div{padding:11px 0}
 body .numbers-copy .metric-list strong{font-size:20px}
 body .numbers-copy .metric-list span{font-size:13px}
 @media (max-width:900px){body .fin-heading span{white-space:normal}body .fin-heading .fh-1{font-size:30px}body .fin-heading .fh-2{font-size:25px}}
+
+/* Financování: zarovnání nahoru, těsnější karta */
+body .numbers-section .numbers-layout{align-items:start}
+body .numbers-section{padding-bottom:24px}
+body .fin-card{gap:18px}
+body .fin-card .fin-table tfoot th,body .fin-card .fin-table tfoot td{padding-bottom:0}
+body .fin-card .chart-disclaimer{margin:-4px 0 0}
+/* výzva: blíž, menší, věta na jeden řádek */
+body .cta-section{padding:0 0 24px}
+body .cta-inner{padding:26px 36px;gap:28px}
+body .cta-inner h2{white-space:nowrap;font-size:clamp(20px,1.9vw,26px)!important;margin:0 0 6px!important}
+body .cta-inner p{font-size:15px}
+body .cta-inner .btn-large{font-size:15px;padding:11px 22px;min-height:44px}
+@media (max-width:900px){body .cta-inner h2{white-space:normal}}
