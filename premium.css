@@ -441,3 +441,12 @@ body .accordion details{border-radius:8px}
 body .chart-card,body .market-graphic,body .review,body .calculator-card,body .contact-form,body .stat,body .step,body .emitent-card,body .diligence-row,body .cta-inner,body .gallery-item,body .hero-visual,body .sec-points .market-point,body .fin-card{border-radius:var(--r-card)}
 body .hero-visual,body .gallery-item,body .cta-inner,body .calculator-card{border-radius:var(--r-big)}
 @media (prefers-reduced-motion:no-preference){@keyframes jv-wipe{from{clip-path:inset(0 100% 0 0 round 4px)}to{clip-path:inset(0 0 0 0 round 4px)}}}
+
+/* ===== Srovnání celého webu: pravý blok začíná na úrovni nadpisu ===== */
+#trh .numbers-copy h2.fin-heading{margin-top:0}
+body .contact-section{padding:40px 0 88px}
+@media (min-width:901px){
+  body .calculator-layout,body .faq-layout,body .contact-layout{align-items:start}
+  body .calculator-layout .calculator-card,body .faq-layout #faq-list,body .contact-layout .contact-form{margin-top:56px}
+}
+@media (max-width:700px){body .contact-section{padding:32px 0 64px}}
