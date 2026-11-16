@@ -36,7 +36,7 @@
   };
 
   // 1) dlaždice s parametry
-  const stats = [...document.querySelectorAll('.stat strong')];
+  const stats = [...document.querySelectorAll('.stat strong:not([data-static])')];
   stats.forEach(el => el.dataset.final = el.innerHTML);
   once(stats, el => countUp(el, 1300), 0.6);
 

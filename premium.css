@@ -38,7 +38,7 @@ body .hero-subtitle{font-size:18px!important;line-height:1.62!important;color:va
 /* štítek nad nadpisem: krátká linka nad malým popiskem */
 body .eyebrow{display:block;font-family:var(--font);font-style:normal;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--copper-dark)}
 body .eyebrow-line{display:block;width:24px;height:2px;background:var(--copper);margin-bottom:12px;opacity:1}
-body .hero .eyebrow{display:none}
+body .hero .eyebrow{display:block;margin-bottom:18px}
 
 /* drobné popisky */
 .stat-top,.tiny-kicker,.review-kicker,.form-kicker,.calc-card-top,.calc-model-flag,.chart-label-row,.market-graphic-foot,.range-labels{font-family:var(--font)!important;text-transform:none!important;letter-spacing:0!important;font-weight:500!important;font-size:13px!important;color:var(--muted)!important}
@@ -201,7 +201,7 @@ body .footer-main p{color:var(--text)}
   body .hero{padding-top:0}
   body .hero-layout{padding-top:28px;padding-bottom:28px}
   body .hero h1{font-size:30px;line-height:1.18}
-  .hero-highlight{display:inline;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 10px 3px}
+  .hero-highlight{display:inline-block;padding:2px 10px 5px}
   body .hero-visual{height:320px}
   body .stats-grid{gap:10px}
   body .stat,body .stat:not(:first-child){padding:14px 16px}
@@ -258,3 +258,8 @@ body .footer-main p{color:var(--text)}
 /* aktivní sekce v menu */
 body .main-nav a.is-active{color:var(--copper-dark);background:var(--accent-bg)}
 body .main-nav a.is-active::after{display:none}
+
+/* nadpis parametrů */
+body .stats-title{font-size:19px;font-weight:600;color:var(--ink);letter-spacing:-.014em;margin:28px auto 0}
+body .stats-grid{padding-top:14px}
+body .hero-subtitle + .hero-subtitle{margin-top:-8px}
