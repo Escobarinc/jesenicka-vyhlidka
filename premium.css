@@ -658,3 +658,21 @@ body .contact-info .gets-title{font-weight:700;color:var(--ink);margin:6px 0 10p
 .gets-list li:first-child{border-top:1px solid var(--line)}
 .gets-list li::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;background:var(--accent-bg) no-repeat center/12px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394643c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12 5 5 9-10'/%3E%3C/svg%3E")}
 body .contact-info .gets-note{font-weight:700;color:var(--ink);margin:0}
+
+/* Kontakt: formulář bez nadpisu, stejně vysoký jako text vlevo */
+@media (min-width:901px){
+  body .contact-layout{align-items:stretch}
+  body .contact-layout .contact-form{display:flex;flex-direction:column;padding:28px 32px}
+  body .contact-form .form-kicker{margin-bottom:18px}
+  body .contact-form .form-grid{margin-bottom:6px}
+  body .contact-form .submit-btn{margin-top:auto}
+}
+@media (min-width:901px){
+  body .contact-layout .contact-form{padding:22px 28px}
+  body .contact-form .form-kicker{margin-bottom:10px}
+  body .contact-form .form-grid{gap:12px 18px;margin-bottom:4px}
+  body .contact-form .field label{margin-bottom:5px}
+  body .contact-form .field input,body .contact-form .field select{padding:9px 12px;min-height:0}
+  body .contact-form .checkbox-label{margin:12px 0 14px}
+  body .contact-info{padding-bottom:0}
+}
