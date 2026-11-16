@@ -28,7 +28,7 @@
   const amountInput = qs('#investment-amount');
   const amountRange = qs('#investment-range');
   if (amountInput && amountRange) {
-    const min = 50000, max = 10000000, step = 10000;
+    const min = 50000, max = 3000000, step = 10000;
     const MATURITY = new Date(2031, 7, 1);
     const rateFor = a => a >= 1000000 ? 10 : a >= 250000 ? 9 : 8;
     const bounded = n => Math.max(min, Math.min(max, Number.isFinite(n) ? n : min));
