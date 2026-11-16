@@ -648,3 +648,13 @@ body .faq-intro{position:static;top:auto;align-items:baseline;margin-bottom:22px
 body .faq-intro h2{line-height:1.2!important}
 body .faq-intro p{max-width:none;padding:0;line-height:1.5}
 body .faq-intro .text-link{padding-bottom:2px;margin-top:0}
+
+/* ===== Kontakt: nezávazná poptávka (bez kontaktních údajů) ===== */
+body .contact-info h2{font-size:30px!important;line-height:1.15!important;max-width:520px}
+body .contact-info > p{font-size:15.5px;line-height:1.65;color:var(--text);max-width:520px;margin:0 0 18px}
+body .contact-info .gets-title{font-weight:700;color:var(--ink);margin:6px 0 10px}
+.gets-list{list-style:none;margin:0 0 20px;padding:0;max-width:520px}
+.gets-list li{position:relative;padding:11px 0 11px 34px;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink)}
+.gets-list li:first-child{border-top:1px solid var(--line)}
+.gets-list li::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;background:var(--accent-bg) no-repeat center/12px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394643c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12 5 5 9-10'/%3E%3C/svg%3E")}
+body .contact-info .gets-note{font-weight:700;color:var(--ink);margin:0}
