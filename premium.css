@@ -620,3 +620,8 @@ body .program-section{background:var(--subtle)}
 .emise-t4 .pt-foot{padding-top:14px}
 @media (min-width:901px){.emise-t4 .prog-tiers .prog-label{margin-bottom:16px}}
 .emise-t4 .prog-tier-rate + .prog-row{display:none!important}
+@media (min-width:901px) and (max-width:1280px){
+  .emise-t4 .prog-tier .prog-row{flex-direction:column!important;align-items:flex-start!important;gap:1px;padding:8px 0}
+  .emise-t4 .prog-tier-rate{font-size:48px}
+  .emise-t4 .prog-tier{padding:24px 16px 18px}
+}
