@@ -267,7 +267,7 @@
   });
 })();
 
-/* Náhled návrhu vylepšení: ?upgrade=1 */
+/* Schválená vylepšení vzhledu (třída up) */
 (() => {
-  if (new URLSearchParams(location.search).get('upgrade') === '1') document.body.classList.add('up');
+  document.body.classList.add('up');
 })();

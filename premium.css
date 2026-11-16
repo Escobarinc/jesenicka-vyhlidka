@@ -744,3 +744,6 @@ body .lead,body .numbers-copy .lead,body .prog-intro p,body .contact-info > p{fo
   .up .stat,.up .stat:not(:first-child){border:0;border-radius:0;background:none;padding:16px 22px}
   .up .stat:not(:first-child){border-left:1px solid var(--line)}
 }
+/* procenta v kartách emisí o třetinu menší, výška karet zůstává */
+.emise-t4 .prog-tier-rate{font-size:40px;margin:8px 0 14px}
+@media (min-width:901px) and (max-width:1280px){.emise-t4 .prog-tier-rate{font-size:32px}}
