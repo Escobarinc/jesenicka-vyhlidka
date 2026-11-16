@@ -355,3 +355,10 @@ body .cta-inner h2{white-space:nowrap;font-size:clamp(20px,1.9vw,26px)!important
 body .cta-inner p{font-size:15px}
 body .cta-inner .btn-large{font-size:15px;padding:11px 22px;min-height:44px}
 @media (max-width:900px){body .cta-inner h2{white-space:normal}}
+
+/* banner výzvy přesunutý pod Pro investory */
+body .numbers-section{padding-bottom:88px}
+body .cta-section{padding:24px 0}
+@media (max-width:700px){body .numbers-section{padding-bottom:64px}}
+/* pravý box Financování začíná na úrovni nadpisu (pod štítkem „Financování“) */
+@media (min-width:901px){body .fin-card{margin-top:55px}}
