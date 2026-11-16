@@ -262,4 +262,6 @@ body .main-nav a.is-active::after{display:none}
 /* nadpis parametrů */
 body .stats-title{font-size:19px;font-weight:600;color:var(--ink);letter-spacing:-.014em;margin:28px auto 0}
 body .stats-grid{padding-top:14px}
-body .hero-subtitle + .hero-subtitle{margin-top:-8px}
+body .hero-subtitle{text-align:justify;hyphens:auto;-webkit-hyphens:auto;margin:0 0 14px!important}
+body .hero-subtitle:last-of-type{margin-bottom:28px!important}
+.nohy{hyphens:manual;-webkit-hyphens:manual;white-space:nowrap}
