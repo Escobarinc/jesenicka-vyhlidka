@@ -193,6 +193,22 @@
       source: 'Jesenická Vyhlídka – web',
       consent: true
     };
+    if (window.JV_CRM) {
+      submit.disabled = true;
+      const calc = qs('#investment-amount');
+      try {
+        await window.JV_CRM.sendLead({
+          name: payload.name, email: payload.email, phone: payload.phone, consent: true,
+          formular: 'Jesenická Vyhlídka – nezávazná poptávka',
+          message: `Zvažovaná částka: ${payload.budget}` + (calc ? `; v kalkulačce: ${calc.value} Kč` : ''),
+        });
+        showFeedback('Děkujeme, vaše nezávazná poptávka byla odeslána. Brzy se vám ozveme.');
+        form.reset();
+      } catch (err) {
+        showFeedback('Poptávku se nepodařilo odeslat. Zkuste to prosím znovu za chvíli.', true);
+      } finally { submit.disabled = false; }
+      return;
+    }
     if (typeof config.leadEndpoint === 'string' && /^https:\/\//i.test(config.leadEndpoint)) {
       submit.disabled = true;
       try {
